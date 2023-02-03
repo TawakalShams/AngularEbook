@@ -1,0 +1,82 @@
+<div>
+  <!-- Show if admin -->
+  <div>
+    <div class="row" style="margin-top: 100px" *ngIf="role_id != 2">
+      <div class="offset-md-1 col-md-3" style="margin-top: 10px">
+        <mat-card id="heightCards">
+          <mat-card-content>
+            <h1 class="cuserchanger" routerLink="/viewusers" style="float: left; ">Users</h1>
+            <img class="cuserchanger" routerLink="/viewusers" width="100px" style="float: right; "
+              src="../../../../../assets/images/users.jpeg">
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-md-3" style="margin-top: 10px">
+        <mat-card id="heightCards">
+          <mat-card-content>
+            <h1 class="cuserchanger" routerLink="/managebooks" style="float: left;"> Books</h1>
+            <img class="cuserchanger" width="100px" routerLink="/managebooks" style="float: right; "
+              src="../../../../../assets/images/books.jpeg">
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-md-3" style="margin-top: 10px">
+        <mat-card id="heightCards">
+          <mat-card-content>
+            <h1 class="cuserchanger" routerLink="/payments" style="float: left;">Payments</h1><br>
+            <h4 class="cuserchanger" routerLink="/payments" style="float: left;"><b>Tzs {{ sum | number}}/=</b></h4>
+            <img class="cuserchanger" routerLink="/payments" width="100px" style="float: right; "
+              src="../../../../../assets/images/payment.png">
+            <div>
+
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="row" style="margin-top: 50px" *ngIf="role_id != 1">
+    <mat-card class="example-card" *ngFor="let dataa of data">
+      <img
+        class="pointer"
+        mat-card-image
+        (click)="desc(dataa)"
+        height="200px"
+        alt="ebooks"
+        src="{{ 'http://localhost:8000/storage/' + dataa.image }}"
+      />
+      <mat-card-content>
+        <div>
+          <span
+            id="title"
+            style="
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              max-width: 100ch;
+            "
+            >{{ dataa.title | slice: 0:16 }} </span
+          ><br />
+          <span class="text-sm"
+            >Author: <b>{{ dataa.author | slice: 0:20 }}</b></span
+          ><br />
+          <span>Tzs {{ dataa.selling | number }}</span>
+        </div>
+      </mat-card-content>
+      <mat-card-footer>
+        <form [formGroup]="form">
+          <input
+            type="hidden"
+            name="customer_id"
+            ngModel="{{ customer_id }}"
+            formControlName="customer_id"
+          />
+          <input type="hidden" name="book_id" formControlName="book_id" />
+          <button mat-raised-button color="accent" (click)="addTocart(dataa)">
+            Add to Cart
+          </button>
+        </form>
+      </mat-card-footer>
+    </mat-card>
+  </div> -->
+</div>

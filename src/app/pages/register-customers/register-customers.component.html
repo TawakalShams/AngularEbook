@@ -1,0 +1,133 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-md-4 col-md-6" id="top">
+      <span >
+  
+      </span>
+      <form [formGroup]="loginForm">
+        <div class="row">
+          <div class="col-md-6">
+            <h1 align="center">
+              <a routerLink="index.html"
+                ><img
+                  style="max-width: 150px"
+                  src="/../../../assets/images/PENGURUSAN.png"
+              /></a>
+            </h1>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Full name</mat-label>
+              <input
+                matInput
+                placeholder="text"
+                formControlName="fullName"
+                autocomplete="off"
+                required
+              />
+              <mat-error align="end">Full name address </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Address</mat-label>
+              <input
+                type="text"
+                matInput
+                placeholder="Ex Mombasa"
+                formControlName="address"
+              />
+              <mat-error align="end">Address is required </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Phone</mat-label>
+              <input
+                type="number"
+                matInput
+                placeholder="Ex 0774071322"
+                formControlName="phone"
+              />
+              <mat-error align="end">Phone number is required </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Gender</mat-label>
+              <mat-select formControlName="gender">
+                <mat-option value="">None</mat-option>
+                <mat-option value="Male">Male</mat-option>
+                <mat-option value="Female">Female</mat-option>
+              </mat-select>
+              <mat-error align="end"> Gender is required </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                placeholder="Email"
+                formControlName="email"
+                autocomplete="off"
+                required
+              />
+              <mat-error align="end"> Please enter email address </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input
+                matInput
+                [type]="hide ? 'password' : 'text'"
+                placeholder="Password"
+                formControlName="password"
+                autocomplete="off"
+                required
+              />
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+              >
+                <mat-icon>{{
+                  hide ? "visibility_off" : "visibility"
+                }}</mat-icon>
+              </button>
+              <mat-error align="end"> Please enter password </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <button
+              mat-raised-button
+              color="accent"
+              (click)="onSubmit()"
+              [disabled]="loginForm.invalid"
+            >
+              Register
+            </button>
+          </div>
+        </div>
+      </form>
+      <a routerLink="/login" style="text-decoration: none">Login</a>
+    </div>
+  </div>
+</div>

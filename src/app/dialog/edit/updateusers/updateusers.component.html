@@ -1,0 +1,75 @@
+<div class="container ">
+  <div class="row">
+    <div class="col-md-4">
+       <mat-icon class="folder" color="accent" style="float: left;">edit_note</mat-icon>
+        <br>
+       &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<span style="padding-top:10px ;">Update User</span>
+    </div>
+</div>
+  <br>
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="form">
+        <div class="container mt-3">
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Full name</mat-label>
+                <input type="text" matInput
+                placeholder="Ex. Tawakal Shams Khamis" formControlName="fullName">
+                <mat-error align="end">Full name is required</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput
+                placeholder="Ex. tawakalshamss@gmail.com" formControlName="email">
+                <mat-error align="end">Email is required</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width" appearance="outline" >
+                <mat-label>Address</mat-label>
+                <input type="text" matInput
+                placeholder="Ex Mombasa" formControlName="address">
+                <mat-error align="end">Address is required</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Gender</mat-label>
+               <mat-select formControlName="gender">
+                <mat-option value="">None</mat-option>
+                <mat-option value="Male">Male</mat-option>
+                <mat-option value="Female">Female</mat-option>
+               </mat-select>
+               <mat-error align="end">Gender is required</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Phone</mat-label>
+                <input type="number" matInput
+                placeholder="Ex 0774071322"  formControlName="phone">
+                <mat-error align="end">Phone number is required</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <button mat-raised-button color="primary" (click)="submit()"  [disabled]="form.invalid">Save</button>
+                &nbsp;
+              <button mat-raised-button color="accent" mat-dialog-close>Cancel</button>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

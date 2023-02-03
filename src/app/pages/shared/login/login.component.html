@@ -1,0 +1,60 @@
+
+<div class="container ">
+<div class="row">
+  <div class="offset-md-4 col-md-6" id="top">
+    <div class="row">
+      <div class="col-md-6 " align="center">
+       <img  src="../../../../assets/images/image book.PNG"alt="log" class="responsive" style=" width:'200px'; height:'200px'">
+      </div>
+    </div>
+    <form [formGroup]="loginForm">
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+            matInput
+            placeholder="Email"
+            formControlName="email"
+            autocomplete="off"
+            required
+          />
+          <mat-error align="end"> Please enter email address </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            placeholder="Password"
+            formControlName="password"
+            autocomplete="off"
+            required
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+          <mat-error  align="end"> Please enter password </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <button mat-raised-button color="accent" class="mat-elevation-z8" (click)="onSubmit()"  [disabled]="loginForm.invalid">login</button>
+        </div>
+      </div>
+  </form> <br>
+  <a routerLink="/register" style="text-decoration: none">Registration</a>
+  </div>
+</div>
+</div>

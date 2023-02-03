@@ -1,0 +1,16 @@
+<mat-nav-list>
+  <a *ngIf="role_id == 1" mat-list-item routerLink="/home"><mat-icon color="accent" aria-hidden="false" aria-label="Example home icon">home</mat-icon>Dashboard</a>
+  <a *ngIf="role_id == 2" mat-list-item routerLink="/Uhome"><mat-icon color="accent" aria-hidden="false" aria-label="Example home icon">home</mat-icon>Dashboard</a>
+  <mat-divider></mat-divider>
+  <a mat-list-item  routerLink="/users"*ngIf="role_id == 1" ><mat-icon color="accent" aria-hidden="false" aria-label="Example home icon">person</mat-icon>Users</a>
+  <a mat-list-item  routerLink="/viewusers" *ngIf="role_id == 1"><mat-icon color="accent" aria-hidden="false" aria-label="Example home icon">group</mat-icon>View Users</a>
+  <mat-divider></mat-divider>
+  <!-- <a mat-list-item  routerLink="/shopping-cart" *ngIf="role_id == 2"><mat-icon  matBadge="{{total}}" matBadgePosition="after" matBadgeColor="accent" color="accent" aria-hidden="false" aria-label="Example home icon">add_shopping_cart</mat-icon>Shopping-cart</a> -->
+  <a mat-list-item  routerLink="/orders"  *ngIf="role_id == 2"><mat-icon color="accent" aria-hidden="false" aria-label="Example home icon">home</mat-icon>My Books</a>
+  <mat-divider></mat-divider>
+  <a mat-list-item  routerLink="/addbook" *ngIf="role_id == 1" ><mat-icon color="accent" aria-hidden="false" aria-label="Example home icon">my_library_add</mat-icon>Add Book</a>
+  <a mat-list-item  routerLink="/managebooks" *ngIf="role_id == 1" ><mat-icon color="accent" aria-hidden="false" aria-label="Example home icon">mode_edit</mat-icon>Manage Books</a>
+  <mat-divider></mat-divider>
+  <a mat-list-item  routerLink="/adminorders"  *ngIf="role_id == 1" ><mat-icon color="accent" aria-hidden="false" aria-label="Example home icon">moped</mat-icon>Manage Orders</a>
+  <mat-divider></mat-divider>
+</mat-nav-list>

@@ -1,0 +1,104 @@
+<ng-container *ngIf="products.length != 0">
+  <div class="container">
+    <div class="card-table" style="padding-top: 60px">
+      <div class="cart-product">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>Sr.No</th>
+              <th>Boook Name</th>
+              <th>Author</th>
+              <th>Price</th>
+              <th>Action</th>
+              <!-- <th>Total</th>
+                          <th>Action</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of products; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ item.title }}</td>
+              <td>{{ item.author }}</td>
+              <th style="width: 12%">Tzs {{ item.selling | number }}</th>
+              <td>
+                <form [formGroup]="form">
+                  <input
+                    type="hidden"
+                    formControlName="customer_id"
+                    name="id"
+                    id="id"
+                    ngModel="{{ id }}"
+                  />
+
+                  <input
+                    type="hidden"
+                    formControlName="book_id"
+                    name="item"
+                    id="item"
+                    ngModel="{{ items }}"
+                  />
+                  &nbsp;
+                  <a>
+                    <button
+                      mat-icon-button
+                      color="accent"
+                      #tooltip="matTooltip"
+                      matTooltip="Save to My Books"
+                      (click)="save(item)"
+                    >
+                      <mat-icon>shopping_basket</mat-icon>
+                    </button>
+                  </a>
+                </form>
+                &nbsp;
+                <a>
+                  <button
+                    mat-icon-button
+                    color="warn"
+                    #tooltip="matTooltip"
+                    matTooltip="Delete"
+                    (click)="removeItem(item)"
+                  >
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+              <td>
+                <button (click)="emptycart()" class="btn btn-danger">
+                  Empty Cart
+                </button>
+              </td>
+              <td>
+                <button routerLink="/listofbooks" class="btn btn-primary">
+                  Shop More
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="products.length == 0">
+  <div class="container">
+    <div class="card">
+      <h5 class="card-title">My Cart</h5>
+    </div>
+    <div class="center">
+      <img
+        src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90"
+        alt=""
+      />
+      <h4>Your cart is empty!</h4>
+      <h6>Add item to it now</h6>
+      <button routerLink="/listofbooks" mat-raised-button color="accent">
+        Shop Now
+      </button>
+    </div>
+  </div>
+</ng-container>

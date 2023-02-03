@@ -1,0 +1,39 @@
+.example-card {
+    max-width: 170px;
+    max-height: 50rem;
+    margin-top: 2rem;
+    margin-left: 1rem;
+  }
+  #title{
+    font-size: large;
+  }
+  .pointer {
+    cursor: pointer;
+  }
+  button {
+    width: 100%;
+    padding: 0;
+  }
+  .example-card {
+    max-width: 170px;
+    max-height: 50rem;
+    margin-top: 2rem;
+    margin-left: 1rem;
+  }
+  #title{
+    font-size: large;
+  }
+  .pointer {
+    cursor: pointer;
+  }
+  button {
+    width: 100%;
+    padding: 0;
+  }
+  #heightCards{
+    height: 150px;
+  }
+  .cuserchanger{
+  cursor: pointer;
+  }
+  

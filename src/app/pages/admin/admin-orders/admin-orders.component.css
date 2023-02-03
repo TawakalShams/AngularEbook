@@ -1,0 +1,20 @@
+.tables{
+  width: 100%;
+}
+.searchInput{
+  width: 100%;
+  padding-top: 10%;
+}
+.example-button {
+  display: block;
+  margin: 80px auto 400px;
+}
+
+.example-container {
+  height: 200px;
+  overflow: auto;
+  border: 1px solid #ccc;
+}
+.folder {
+  font-size: 50px;
+}

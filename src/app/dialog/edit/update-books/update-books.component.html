@@ -1,0 +1,98 @@
+<div class="container ">
+  Update Book
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="form" enctype="multipart/form-data">
+        <div class="container mt-3">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Book Title</mat-label>
+                    <input [(ngModel)]="title" type="text" matInput
+                    placeholder="Ex. Pass like shodow" formControlName="title">
+                   <mat-error align="right">Book title is required </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Author</mat-label>
+                    <input type="text" matInput
+                    placeholder="Ex. Prime Spring" formControlName="author">
+                   <mat-error align="right">Author is required </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Year</mat-label>
+                    <input type="date" matInput
+                    placeholder="Ex 7000" formControlName="year">
+                   <mat-error align="right">Yaer of publish is required </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Selling price</mat-label>
+                    <input type="number" matInput
+                    placeholder="Ex 20000"  formControlName="selling">
+                   <mat-error align="right">Selling price is required </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Book description</mat-label>
+                    <textarea matInput placeholder="Ex. It makes me feel..."  formControlName="description"></textarea>
+                    <mat-error align="right">Book description is required </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <span>Please select book</span>
+                  <br>
+                    <input
+                    formControlName="book"
+                    type="file"
+                    name="files"
+                    id="image1"
+                    color="accent"
+                    class="btn  btn-sm"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <br>
+              <div class="img-fluid">
+                <div class="preview">
+                 &nbsp;&nbsp;&nbsp; <img
+                    mat-card-image
+                    [src]="imageSrc"
+                    style="width: 200px; height: 150px; border-radius: 5px"
+                  />
+                  <input
+                  type="file"
+                  name="files"
+                  id="image1"
+                  formControlName="image"
+                  class="btn  btn-sm"
+                  (change)="onFileChange($event)"
+                />
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-md-6"><br>
+                  <button mat-raised-button color="accent" (click)="submit()" [disabled]="form.invalid">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

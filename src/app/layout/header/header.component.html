@@ -1,0 +1,57 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar color="accent">
+      <span class="text-sm">E-books</span>
+    </mat-toolbar>
+    <app-left-nav></app-left-nav>
+  </mat-sidenav>
+  <mat-sidenav-content  >
+    <mat-toolbar  class="fixed-top" color="accent">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      &nbsp;
+      <span class="example-spacer"></span>
+
+      <span><b *ngIf="gender =='Male'">Sir.</b> <b *ngIf="gender =='Female'">Madam.</b> {{ fullname }}</span>
+
+
+      <div >
+        <button
+          matBadgePosition="after"
+          mat-icon-button
+          [matMenuTriggerFor]="menu"
+          aria-label="Example icon-button with a menu"
+        >
+        <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="changepassword(row)" >
+            <mat-icon color="accent">settings</mat-icon>
+            <span>Change password</span>
+          </button>
+          <button mat-menu-item (click)="logout()">
+            <mat-icon
+              color="accent"
+              class="toolbar-icon"
+              matBadgePosition="after"
+              matBadgeColor="accent"
+              ><span class="material-icons"> power_settings_new </span></mat-icon
+            >logout
+          </button>
+        </mat-menu>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
